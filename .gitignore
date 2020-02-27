@@ -1,2 +1,26 @@
-# Project exclude paths
-/out/
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+### Maven template
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+### Java template
+# Compiled class file
+*.class
+*.log
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
