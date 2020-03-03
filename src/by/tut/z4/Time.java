@@ -7,15 +7,7 @@ public class Time {
 
     public static void main(String[] args) {
         Time time = new Time(2, 15, 15);
-        // Time time2 = new Time(7328);
-        //Time time23 = new Time("7328");
-        // System.out.println(time23);
         System.out.println(time);
-//        System.out.println(time2);
-
-
-//        time.allseconds(time);
-//        time2.fromSecond(time2);
     }
     public Time(int hours, int minutes, int seconds) {
         this(hours * 3600 + minutes * 60 + seconds);
