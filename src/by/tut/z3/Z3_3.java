@@ -9,6 +9,7 @@ public class Z3_3 {
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextDouble();
         }
+        System.out.println(" № 3 ");
         System.out.println("initial array:");
         for (int i = array.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {

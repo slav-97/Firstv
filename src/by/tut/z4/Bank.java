@@ -14,15 +14,15 @@ public class Bank {
     public final static int twentiesAmount = 20;
 
     public static void main(String[] args) {
-        Bank bank = new Bank(20, 50,  100);
-        bank.addMoney("hundreds", 9);
-        System.out.println(bank.getMoney(500));
+        Bank atm = new Bank(10, 20,  30);
+        atm.addMoney("hundreds", 9);
+        System.out.println(atm.getMoney(1000));
     }
 
-    public Bank(int twenties, int fifties, int hundreds) {
+    public Bank(int hundreds, int twenties, int fifties) {
+        this.hundreds = hundreds;
         this.twenties = twenties;
         this.fifties = fifties;
-        this.hundreds = hundreds;
     }
 
     public int getTwenties() {
@@ -52,7 +52,7 @@ public class Bank {
 
     @Override
     public String toString() {
-        return "ATM{" +
+        return "Bank{" +
                 "twenties=" + twenties +
                 "fifties=" + fifties +
                 ", hundreds=" + hundreds +
@@ -80,7 +80,7 @@ public class Bank {
     }
 
     public boolean getMoney(int sum) {
-        int havesum =  getTwenties() * 20 +getFifties() * 50 + getHundreds() * 100;
+        int havesum =  getTwenties() * 20 + getFifties() * 50 + getHundreds() * 100;
         if (havesum < sum) {
             return false;
         } else {
@@ -89,9 +89,9 @@ public class Bank {
                 return false;
             } else {
                 int amounthundred = sum / 100;
-                int amounttwent = (sum - amounthundred * 100) / 50;
-                int amountfift = (sum - amounthundred * 100 - amounttwent * 50) / 20;
-                System.out.println("Кол-во 50:  " + amountfift + "  Кол-во 20:  " + amounttwent + "  Кол-во 100: " + amounthundred);
+                int amountfift = (sum - amounthundred * 50) / 50;
+                int amounttwent = (sum - amounthundred * 50 - amountfift * 20) / 20;
+                System.out.println("Кол-во 100:  " + amounthundred + "Кол-во 50:  " + amountfift + "Кол-во 20:  " + amounttwent);
             }
             return true;
         }
