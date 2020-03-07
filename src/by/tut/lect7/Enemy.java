@@ -1,23 +1,35 @@
 package by.tut.lect7;
 
-public class Enemy {
-    private int health;
+public class Enemy extends Hero{
+    private String name = "Bulkin";
+    private String type;
+    private int maxHealth;
 
 
-    public Enemy(int health) {
-        this.health = health;
+
+    public Enemy() {
+
+        super(150, 15);
+        maxHealth = 90;
+        attackDamage = 5;
+        health = rand.nextInt(maxHealth);
+        type = name;
     }
 
-    public int getHealth() {
-        return health;
+    public Enemy(int health, int attackDamage) {
+        super(health, attackDamage);
     }
 
-    public void setHealth(int health) {
-        this.health = health;
+    @Override
+    public void display() {
+
     }
 
-    public int takeDamage(int damage) {
-        health = getHealth() - damage;
-        return health;
+    public String getType() {
+        return type;
+    }
+
+    public boolean isAlive() {
+        return health > 0;
     }
 }

@@ -2,59 +2,35 @@ package by.tut.lect5;
 
 import java.math.BigDecimal;
 
-class OverloadOfMethods {
+class argument {
 
-    int sumOverload(int intNumberA, int intNumberB) {
-        int result = 0;
-        result = intNumberA + intNumberB;
+    private int a1;
+    private int a2;
+    private double b1;
+    private double b2;
 
-        return result;
+    public static int sum(int a1, int a2) {
+        return a1 + a2;
     }
 
-    double sumOverload(double doubleNumberA, double doubleNumberB) {
-        double result = 0;
-        result = doubleNumberA + doubleNumberB;
-
-        return result;
+    public static double sum(double b1, double b2) {
+        return b1 + b2;
     }
 
-    BigDecimal sumOverload(BigDecimal bigDecimalNumberA, BigDecimal bigDecimalNumberB) {
-        BigDecimal result = null;
-        result = bigDecimalNumberA.add(bigDecimalNumberB);
+    public static BigDecimal BigDecimalsum(int a1, int a2) {
+        return (new BigDecimal(a1).add(new BigDecimal(a2)));
+    }
 
-        return result;
-
+    public static BigDecimal BigDecimalsum(double b1, double b2) { BigDecimal now = new BigDecimal(b1);
+        BigDecimal now1 = new BigDecimal(b2);
+        return now.add(now1);
     }
 }
 
 public class Busya03 {
     public static void main(String[] args) {
-
-        int intNumberA = 30;
-        int intNumberB = 150;
-        double doubleNumberA = 20.5;
-        double doubleNumberB = 30285.75;
-
-        int resultIntNumbers = 0;
-        double resultDoubleNumbers = 0;
-        BigDecimal resultBigDecimalNumbers = null;
-
-        BigDecimal bigDecimalNumberA = new BigDecimal("11111.12");
-        BigDecimal bigDecimalNumberB = new BigDecimal("22222.1234");
-
-        OverloadOfMethods overloadObj = new OverloadOfMethods();
-
-        resultIntNumbers = overloadObj.sumOverload(intNumberA, intNumberB);
-        System.out.println("Sum of " + intNumberA + " + " + intNumberB + " = "
-                + resultIntNumbers);
-
-        resultDoubleNumbers = overloadObj.sumOverload(doubleNumberA, doubleNumberB);
-        System.out.println("Sum of " + doubleNumberA + " + " + doubleNumberB + " = "
-                + resultDoubleNumbers);
-
-        resultBigDecimalNumbers = overloadObj.sumOverload(bigDecimalNumberA, bigDecimalNumberB);
-        System.out.println("Sum of " + bigDecimalNumberA + " + " + bigDecimalNumberB + " = "
-                + resultBigDecimalNumbers);
+        System.out.println(argument.sum(0.2, 0.2));
+        System.out.println(argument.BigDecimalsum(1111.12, 1212.2343));
 
     }
 }
