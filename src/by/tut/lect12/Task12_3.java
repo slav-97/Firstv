@@ -24,7 +24,7 @@ public class Task12_3 {
         System.out.println("Нормальное завершение.");
     }
 
-    static class MyException extends Exception {
+    public static class MyException extends Exception {
         private int detail;
 
         public MyException(int detail, String message) {
