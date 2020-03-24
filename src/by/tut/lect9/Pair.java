@@ -27,4 +27,10 @@ public class Pair<K, V> {
     public void setValue(V Value) {
         this.Value = Value;
     }
+
+    @Transaction
+    public static void transactionTesting() {
+        System.out.println("Transaction processing, please wait");
+
+    }
 }

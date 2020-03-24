@@ -4,8 +4,7 @@ import java.math.BigDecimal;
 
 public class Generics {
     public static void main(String[] args) {
-
-        Pair<String, String> initialPair = new Pair<>("12", "1212Value");
+        Pair<String, String> initialPair = new Pair<>("1111key", "2222Value");
 
         System.out.println("Pair K before " + initialPair.getKey());
         System.out.println("Pair V before " + initialPair.getValue());
@@ -43,6 +42,10 @@ public class Generics {
         System.out.println("BigDecimal sum " + varBigDecimal.getValue01() + " + " + varBigDecimal.getValue02() + " = " + sum04Result);
         System.out.println("BigDecimal div " + varBigDecimal.getValue01() + " / " + varBigDecimal.getValue02() + " = " + div04Result);
 
-    }
+        Calculator<Double> calculator = new Calculator(12.5, 15.5);
 
+        ClassAnalyzer.analizeClass(calculator);
+
+        ClassAnalyzer.transactionSuccessVerification(calculator);
+    }
 }
