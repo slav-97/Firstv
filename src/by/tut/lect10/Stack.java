@@ -1,59 +1,59 @@
 package by.tut.lect10;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.*;
 
 public class Stack {
-    /*public static void main(String[] args) {
-         Stack stack = new Stack();
-         int n=0;
-         System.out.println("Введите число ");
-         Scanner sc1 = new Scanner(System.in);
-         try {
-             n = sc1.nextInt();
-         } catch (InputMismatchException fg)
-         {
-             System.out.print("Вы ввели не число." );
-         }
-         Char [] numbers = String.valueOf(n).toCharArray();
-         (Char num : numbers){ stack.push(num);}
-         while(!stack.empty())
-         {
-             char stackNum;
-             stackNum = (Character)stack.pop();
-             System.out.print(stackNum);
-         }
-  /*  static void showpush(Stack st, int a)
-    {
-        st.push(new Integer(a));
-        System.out.println("push(" + a + ")");
-        System.out.println("stack: " + st);
+    private int stackSize;
+    private List<Integer> list;
+    private int tailOfStack;
+    private List<Integer> stackList;
+
+    public Stack(int stackSize, List<Integer> list) {
+        this.stackSize = stackSize;
+        this.list = list;
+        tailOfStack = -1;
+        this.stackList = null;
     }
-    static void showpop(Stack st)
-    {
-        System.out.print("pop -> ");
-        Integer a = (Integer) st.pop();
-        System.out.println(a);
-        System.out.println("stack: " + st);
+
+    public void setStackList(List<Integer> stackList) {
+        this.stackList = stackList;
     }
-    public static void main(String args[])
-    {
-        Stack st = new Stack();
-        System.out.println("stack: " + st);
-        showpush(st, 42);
-        showpush(st, 66);
-        showpush(st, 99);
-        showpop(st);
-        showpop(st);
-        showpop(st);
-        try
-        {
-            showpop(st);
+
+    public void push() {
+        List<Integer> stackList = new ArrayList<>();
+
+        System.out.println("Preparing stack filling");
+        System.out.println("Stack pointer before adding: " + tailOfStack);
+        System.out.println("Stack size: " + list.size());
+        System.out.println("Filling stack started");
+
+        for (int i = 0; i < list.size(); i++) {
+            if (tailOfStack == (list.size() - 1)) {
+                System.out.println("Stack is full");
+            } else {
+                stackList.add(list.get(++tailOfStack));
+                System.out.println("Added number " + stackList.get(tailOfStack));
+            }
         }
-        catch (EmptyStackException e)
-        {
-            System.out.println("empty stack");
+        System.out.println("Amount of filled numbers: " + stackList.size());
+        System.out.println("Stack pointer after adding: " + tailOfStack);
+        System.out.println("Filling stack ended sucessfully");
+        setStackList(stackList);
+    }
+
+    public void pop() {
+        System.out.println("Preparing stack Popping out");
+        System.out.println("Stack pointer before popping out: " + tailOfStack);
+        System.out.println("Stack size: " + list.size());
+        System.out.println("Popping out stack started");
+
+        for (int i = 0; i < stackList.size(); i++) {
+            if (tailOfStack < 0) {
+                System.out.println("Stack is Empty");
+            } else {
+                System.out.println("Popping out number " + stackList.get(tailOfStack--));
+            }
         }
-    }*/
+        System.out.println("Popping out stack ended");
+    }
 }
