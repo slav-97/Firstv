@@ -4,7 +4,7 @@ import java.util.*;
 
 //Создать список оценок учеников с помощью ListIterator, заполнить случайными оценками. Удалить неудовлетворительные оценки из списка.
 
-public class ListIt {
+public class ListIt1 {
     public static void main(String[] args) {
         int element = 5;
         int negative = 3;
