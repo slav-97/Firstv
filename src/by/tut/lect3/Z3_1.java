@@ -1,4 +1,4 @@
-package by.tut.z3;
+package by.tut.lect3;
 
 public class Z3_1 {
     public static void main(String[] args) {

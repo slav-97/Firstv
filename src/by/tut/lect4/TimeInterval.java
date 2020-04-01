@@ -1,4 +1,4 @@
-package by.tut.z4;
+package by.tut.lect4;
 
 public class TimeInterval {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package by.tut.z3;
+package by.tut.lect3;
 
 import java.util.Scanner;
 
