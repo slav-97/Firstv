@@ -2,7 +2,7 @@ package by.tut.lect18;
 
  // Безумный учёный каждую ночь на протяжении 50 суток отправляет своего прислужника на свалку фабрики
 //  роботов за деталями. Чтобы собрать одного робота нужно:
-//  Голова, Тело, Левая рука, Правая рука, Левая нога, Правая нога, CPU, RAM, HDD <br>
+//  Голова, Тело, Левая рука, Правая рука, Левая нога, Правая нога, CPU, RAM, HDD
 //  В первую ночь фабрика выбрасывает 20 случайных деталей на свалку. Каждую последующую ночь фабрика
 //  выбрасывает на свалку от 1 до 4 случайных деталей. В то же самое время прислужник отправляются на
 //  свалку и собирает от 1 до 4 случайных деталей. Если на свалке деталей нет – прислужник уходит ни с чем.
@@ -13,15 +13,11 @@ package by.tut.lect18;
 
 public class Task18_2 {
     public static void main(String[] args) {
-        int size = 20;
-        PartsOfRobot[] parts = new PartsOfRobot[size];
-        PartsOfRobotGenerator generator = new PartsOfRobotGenerator();
+        int numberOfScients = 1;
+        int days = 50;
+        int dayDuration = 100;
 
-        for (int i = 0; i < size; i++) {
-            parts[i] = generator.getRandomPart();
-        }
-
-        for (PartsOfRobot p : parts)
-            System.out.println(p.getValue());
+        TaskBuilder taskBuilder = new TaskBuilder(numberOfScients, days, dayDuration);
+        taskBuilder.runTask();
     }
 }
